@@ -1,0 +1,14 @@
+{
+    "data": [
+        {"id": "1000","name": "Ford Bronco","description": "Import direct : Ford Bronco 1988. Véhicule basé à West Palm Beach, Florida.","image": "ford1.png","price": 14590,"kilometrage": 16576,"annee": 1988},
+        {"id": "1001","name": "Ford Bronco","description": "Motorisation : 8 cylindres. Transmission : manuelle à 3 rapports. Direction assistée, freins à disques.","image": "ford2.png","price": 80800,"kilometrage": 99999,"annee": 1976},
+        {"id": "1002","name": "Ford Bronco","description": "Motorisation : 8 cylindres. Transmission : automatique. 4 roues motrices, sièges en cuir, air conditionné.","image": "ford3.png","price": 57200,"kilometrage": 99999,"annee": 1971},
+        {"id": "1003","name": "Ford Bronco","description": "Motorisation : V8 400ci. Transmission : automatique. Air conditionné, radio FM.","image": "ford4.png","price": 55500,"kilometrage": 143232,"annee": 1978},
+        {"id": "1004","name": "Ford Bronco","description": "Motorisation : 8 cylindres. Transmission : manuelle à 5 rapports. Direction assistée, freins à disques, sièges en cuir.","image": "ford5.png","price": 84200,"kilometrage": 805,"annee": 1972},
+        {"id": "1005","name": "Ford Bronco","description": "Transmission : automatique. Direction assistée, freins à disques, stéréo, pneus neufs.","image": "ford6.png","price": 35300,"kilometrage": 152888,"annee": 1979},
+        {"id": "1006","name": "Ford Bronco","description": "Transmission : automatique. Direction assistée, assistance au freinage, freins à disques.","image": "ford7.png","price": 71500,"kilometrage": 483,"annee": 1975},
+        {"id": "1007","name": "Ford Bronco","description": "Transmission : automatique. Nos solutions permettent aux particuliers et professionnels d'acquérir et de rapatrier une automobile au meilleurs tarifs.","image": "ford8.png","price": 37900,"kilometrage": 97587,"annee": 1989},
+        {"id": "1008","name": "Ford Bronco","description": "Motorisation : 8 cylindres. Transmission : automatique.","image": "ford9.png","price": 50500,"kilometrage": 141691,"annee": 1976},
+        {"id": "1009","name": "Ford Bronco","description": "Motorisation : V8 400ci. Transmission : automatique. Air conditionné, radio FM.","image": "ford10.png","price": 56100,"kilometrage": 50740,"annee": 1980}
+    ]
+}

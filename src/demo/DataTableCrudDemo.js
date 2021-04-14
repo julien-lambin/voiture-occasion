@@ -46,7 +46,7 @@ function DataTableCrudDemo() {
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const formatCurrency = (value) => {
-        return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        return value.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' });
     }
 
     const openNew = () => {
@@ -189,7 +189,8 @@ function DataTableCrudDemo() {
     }
 
     const imageBodyTemplate = (rowData) => {
-        return <img src={`https://www.primefaces.org/primereact/showcase/showcase/demo/images/product/${rowData.image}`} onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} alt={rowData.image} className="product-image" />
+        console.log(rowData.image);
+        return <img src={`img/${rowData.image}`} onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} alt={rowData.image} className="product-image" />
     }
 
     const priceBodyTemplate = (rowData) => {
@@ -200,9 +201,6 @@ function DataTableCrudDemo() {
         return <Rating value={rowData.rating} readOnly cancel={false} />;
     }
 
-    const statusBodyTemplate = (rowData) => {
-        return <span className={`product-badge status-${rowData.inventoryStatus.toLowerCase()}`}>{rowData.inventoryStatus}</span>;
-    }
 
     const actionBodyTemplate = (rowData) => {
         return (
@@ -256,19 +254,17 @@ function DataTableCrudDemo() {
                     header={header}>
 
                     <Column selectionMode="multiple" headerStyle={{ width: '3rem' }}></Column>
-                    <Column field="code" header="Code" sortable></Column>
-                    <Column field="name" header="Name" sortable></Column>
+                    <Column field="name" header="Nom" sortable></Column>
                     <Column header="Image" body={imageBodyTemplate}></Column>
-                    <Column field="price" header="Price" body={priceBodyTemplate} sortable></Column>
-                    <Column field="category" header="Category" sortable></Column>
-                    <Column field="rating" header="Reviews" body={ratingBodyTemplate} sortable></Column>
-                    <Column field="inventoryStatus" header="Status" body={statusBodyTemplate} sortable></Column>
+                    <Column field="price" header="Prix" body={priceBodyTemplate} sortable></Column>
+                    <Column field="kilometrage" header="Kilometrage" sortable></Column>
+                    <Column field="annee" header="Annee" sortable></Column>
                     <Column body={actionBodyTemplate}></Column>
                 </DataTable>
             </div>
 
             <Dialog visible={productDialog} style={{ width: '450px' }} header="Product Details" modal className="p-fluid" footer={productDialogFooter} onHide={hideDialog}>
-                {product.image && <img src={`https://www.primefaces.org/primereact/showcase/showcase/demo/images/product/${product.image}`} onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} alt={product.image} className="product-image" />}
+                {product.image && <img src={`img/${product.image}`} onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} alt={product.image} className="product-image" />}
                 <div className="p-field">
                     <label htmlFor="name">Name</label>
                     <InputText id="name" value={product.name} onChange={(e) => onInputChange(e, 'name')} required autoFocus className={classNames({ 'p-invalid': submitted && !product.name })} />
@@ -279,36 +275,10 @@ function DataTableCrudDemo() {
                     <InputTextarea id="description" value={product.description} onChange={(e) => onInputChange(e, 'description')} required rows={3} cols={20} />
                 </div>
 
-                <div className="p-field">
-                    <label className="p-mb-3">Category</label>
-                    <div className="p-formgrid p-grid">
-                        <div className="p-field-radiobutton p-col-6">
-                            <RadioButton inputId="category1" name="category" value="Accessories" onChange={onCategoryChange} checked={product.category === 'Accessories'} />
-                            <label htmlFor="category1">Accessories</label>
-                        </div>
-                        <div className="p-field-radiobutton p-col-6">
-                            <RadioButton inputId="category2" name="category" value="Clothing" onChange={onCategoryChange} checked={product.category === 'Clothing'} />
-                            <label htmlFor="category2">Clothing</label>
-                        </div>
-                        <div className="p-field-radiobutton p-col-6">
-                            <RadioButton inputId="category3" name="category" value="Electronics" onChange={onCategoryChange} checked={product.category === 'Electronics'} />
-                            <label htmlFor="category3">Electronics</label>
-                        </div>
-                        <div className="p-field-radiobutton p-col-6">
-                            <RadioButton inputId="category4" name="category" value="Fitness" onChange={onCategoryChange} checked={product.category === 'Fitness'} />
-                            <label htmlFor="category4">Fitness</label>
-                        </div>
-                    </div>
-                </div>
-
                 <div className="p-formgrid p-grid">
                     <div className="p-field p-col">
                         <label htmlFor="price">Price</label>
-                        <InputNumber id="price" value={product.price} onValueChange={(e) => onInputNumberChange(e, 'price')} mode="currency" currency="USD" locale="en-US" />
-                    </div>
-                    <div className="p-field p-col">
-                        <label htmlFor="quantity">Quantity</label>
-                        <InputNumber id="quantity" value={product.quantity} onValueChange={(e) => onInputNumberChange(e, 'quantity')} integeronly />
+                        <InputNumber id="price" value={product.price} onValueChange={(e) => onInputNumberChange(e, 'price')} mode="currency" currency="EUR" locale="fr-FR" />
                     </div>
                 </div>
             </Dialog>

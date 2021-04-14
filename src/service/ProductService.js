@@ -7,7 +7,7 @@ export default class ProductService {
     }
 
     getProducts() {
-        return axios.get('https://www.primefaces.org/primereact/showcase/showcase/demo/data/products.json').then(res => res.data.data);
+        return axios.get('products.json').then(res => res.data.data);
     }
 
     getProductsWithOrdersSmall() {

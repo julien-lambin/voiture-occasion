@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import PrimeReact from 'primereact/api';
 import DataTableCrudDemo from './demo/DataTableCrudDemo.js'
 
